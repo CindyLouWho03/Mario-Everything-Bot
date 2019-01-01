@@ -1,5 +1,6 @@
 import discord
 import random
+import flask
 import os
 from keep_alive import keep_alive
 from discord.ext import commands
@@ -10,6 +11,37 @@ bot = commands.Bot(command_prefix='/')
 @bot.event
 async def on_ready():
     print(f'Connected as: {bot.user.name} \nBot ID#: {bot.user.id}')
+
+@bot.group()
+async def party(): pass
+
+@party.command(aliases=['4-7'])
+async def fourthroughseven():
+    mp4through7=['4','5','6','7']
+    await bot.say(random.choice(mp4through7))
+
+@party.command(aliases=['1-3'])
+async def onethroughthree():
+    mp1through3=['1','2','3']
+    await bot.say(random.choice(mp1through3))
+
+@party.command(aliases=['1-7'])
+async def onethroughseven():
+    mp1through7=['1','2','3','4','5','6','7']
+    await bot.say(random.choice(mp1through7))
+
+@bot.group()
+async def roll(): pass
+
+@roll.command(aliases=['2'])
+async def two():
+    board1list=['1','2']
+    await bot.say(random.choice(board1list))
+
+@roll.command(aliases=['3'])
+async def three():
+    board1list=['1','2','3']
+    await bot.say(random.choice(board1list))
 
 @bot.group()
 async def board(): pass
