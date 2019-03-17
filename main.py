@@ -13,6 +13,53 @@ async def on_ready():
     print(f'Connected as: {bot.user.name} \nBot ID#: {bot.user.id}')
 
 @bot.group()
+async def myip(): pass
+
+@myip.command(aliases=['Add'])
+async def add():
+    await bot.say("To add an IP contact @Cindy Lou Who#3346") 
+
+@myip.command(aliases=['Help'])
+async def help():
+    await bot.say("Command Arguments: cindy, alvin, nick, epoodle, mps64, jddark, xen, elfman, marioluigijam")  
+
+@myip.command(aliases=['Cindy'])
+async def cindy():
+    await bot.say("159.89.214.31 27786")
+
+@myip.command(aliases=['Alvin'])
+async def alvin():
+    await bot.say("99.91.164.212 27886")
+
+@myip.command(aliases=['Nick'])
+async def nick():
+    await bot.say("98.166.228.23 27886")
+
+@myip.command(aliases=['EPoodle', 'Epoodle', 'ePoodle'])
+async def epoodle():
+    await bot.say("173.52.231.110 27886")
+
+@myip.command(aliases=['MPS64'])
+async def mps64():
+    await bot.say("100.36.76.42 6407")
+
+@myip.command(aliases=['JDDark'])
+async def jddark():
+    await bot.say("47.208.93.124 27999")
+
+@myip.command(aliases=['Xen'])
+async def xen():
+    await bot.say("47.185.3.184 28843")
+
+@myip.command(aliases=['Elfman', 'Elfman13', "elfman13"])
+async def elfman():
+    await bot.say("73.36.190.100 27886")
+
+@myip.command(aliases=["MarioLuigiJam"])
+async def marioluigijam():
+    await bot.say("107.213.16.16 43000")
+
+@bot.group()
 async def party(): pass
 
 @party.command(aliases=['4-7'])
